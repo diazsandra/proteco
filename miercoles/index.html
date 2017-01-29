@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style type="text/css">
+      html, body { height: 100%; margin: 0; padding: 0; }
+      #map { height: 100%; }
+    </style>
+  </head>
+  <body>
+    <!--link parala estructura del html
+      https://developers.google.com/maps/documentation/javascript/tutorial?hl=es-419
+    -->
+
+    <div id="map"></div>
+
+    <script type="text/javascript">
+      var map;
+      function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+        center: {lat: 19.328133, lng: -99.182034},
+        zoom: 17,
+        zoomControl:false,
+        mapTypeControl:false,
+        //vista sátelite mapTypeId: google.maps.MapTypeId.SATELLITE
+        });
+        //dirección del zoom
+        map.setTilt(90);
+
+        var marker = new google.maps.Marker({
+          position: {lat: 19.328133, lng: -99.182034},
+          map: map,
+          title: "Estamos aquí"
+        });
+
+        var marker = new google.maps.Marker({
+          position: {lat: 19.334561, lng: -99.181467},
+          map: map,
+          title: "Aquí está Elo"
+        });
+
+      }
+
+    </script>
+    <!--para pedir los datos de la API-->
+    <script async defer
+      src="https://maps.googleapis.com/maps/api/js?callback=initMap&signed_in=true&key=AIzaSyA2_PqfPRThw7-uftfTOeaSbYfbNNNESJU&callback=initMap">
+    </script>
+    <!--foto de usuario, se pone en el src de la API
+      callback=initMap&signed_in=true&
+    -->
+  </body>
+</html>

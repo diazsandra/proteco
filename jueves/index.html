@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html ng-app="myApp"><!--nombre que le damos a la app en angular-->
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+    <script type="text/javascript" src="js/angular.min.js"></script>
+  </head>
+  <body ng-controller="movieCtrl as movie">
+
+    <div class="container">
+      <div class="row">
+        <input type="text" ng-model="search">
+
+        <!--<div class="col s12 m3" ng-repeat="n in movie.nombre | filter: search">
+            <span>{{n.nombre}}</span>
+            <span>{{n.edad}}</span>
+        </div>-->
+
+      </div>
+
+      <div class="row">
+        <div class="col s12 m4" ng-repeat="m in movie.collection | filter: search | orderBy: 'name': 1"><!--orderBy: 'year': 1 *** 0 va de la más antigua a la más nueva, 1 al contrario-->
+          <div class="card">
+
+            <div class="card-image">
+              <img height="300px" src="{{m.img}}">
+              <span class="card-title" style="background-color:rgba(0,0,0,.2)"><b>{{m.name}}</b></span>
+            </div>
+
+            <div class="card-content">
+              <p>{{m.year}} <br> {{m.category}}</p>
+              <ul ng-repeat="c in m.cast">
+                <li>{{c}}</li>
+              </ul>
+            </div>
+
+            <div class="card-action">
+              <a href="#">Ver película</a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+
+
+    <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+
+  </body>
+</html>

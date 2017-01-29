@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html ng-app>
+  <head>
+    <meta charset="utf-8">
+    <title>Angular.js</title>
+    <script type="text/javascript" src="js/angular.min.js">
+
+    </script>
+  </head>
+  <body>
+
+    <!--<h1>Hola mundo!</h1>
+    <h1>{{"Hola mundo!"}}</h1>-->
+
+    <!--
+    <div>
+      <h4>Filtros de angular</h4>
+      <span>sAndRa</span><br>
+      <span>{{"sAndRa" | lowercase}}</span><br>
+      <span>{{"sAndRa" | uppercase}}</span>
+
+      <br>
+      <br>
+      <br>
+
+      <span>1350</span><br>
+      <span>{{1350 | currency}}</span>
+
+      <br>
+      <br>
+      <br>
+
+      <span>123456789123456789</span><br>
+      <span>{{123456789123456789 | number}}</span>
+    </div>
+    -->
+    <h4>ng-model</h4>
+    <p>
+      <label>Dime tu nombre:</label>
+      <input type="text" ng-model="nombre" placeholder="Escribe tu nombre" size="12">
+    </p>
+
+    <p>
+      <label>Tu nombre es:</label> {{nombre | uppercase}}
+    </p>
+
+    <p>
+      <label>Seleccionar país:</label>
+      <select ng-model="pais">
+        <option value="1">México</option>
+        <option value="2">Francia</option>
+        <option value="3">Alemania</option>
+      </select>
+      <br>
+      <label>Tu país es:</label>{{ pais }}
+    </p>
+
+    <p>
+      <label>Seleccione género:</label>
+      <input type="radio" value="M" ng-model="genero"> Masculino
+      <input type="radio" value="F" ng-model="genero"> Femenino
+      <br>
+      <label>Tu género es:</label>{{ genero }}
+    </p>
+
+    <p>
+      <label>¿Cuáles son tus pasatiempos</label>
+      <br>
+      <input type="checkbox" ng-model="opcion1"> Patinar
+      <input type="checkbox" ng-model="opcion2"> Leer
+      <input type="checkbox" ng-model="opcion3"> Cantar
+      <br>
+      <label>A ti te gusta:</label>{{opcion1}}{{opcion2}}{{opcion3}}
+    </p>
+
+
+
+    <script type="text/javascript" src="js/main.js">
+
+    </script>
+  </body>
+</html>
